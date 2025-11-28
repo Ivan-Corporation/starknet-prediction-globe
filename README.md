@@ -187,26 +187,20 @@ sncast --account mysepolia deploy --contract-name SimpleCounter --constructor-ca
 - Get counter value:
 
 sncast call \
-  --account mysepolia \
-  --contract-address <CONTRACT_ADDRESS> \
-  --function get_current_count \
-  --network sepolia
+  --contract-address 0x04e0501228e3679852adfd003b5faca84b3b2accaf376f16cd4cefaa8ba77743 \
+  --function get_current_count
 
 - Increment counter:
 
 sncast invoke \
-  --account mysepolia \
   --contract-address <CONTRACT_ADDRESS> \
   --function increment \
-  --network sepolia
 
 - Decrement counter:
 
 sncast invoke \
-  --account mysepolia \
   --contract-address <CONTRACT_ADDRESS> \
   --function decrement \
-  --network sepolia
 
 ---
 
