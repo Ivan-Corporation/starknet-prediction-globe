@@ -1,0 +1,9 @@
+{
+  "default": {
+    "account_address": { "hex": "DEVNET" },
+    "private_key": { "hex": "0x" },
+    "public_key": { "hex": "0x" },
+    "salt": { "hex": "0x0" },
+    "deployed": false
+  }
+}

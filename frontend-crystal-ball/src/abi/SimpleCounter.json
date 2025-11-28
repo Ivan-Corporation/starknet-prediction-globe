@@ -1,0 +1,32 @@
+[
+  {
+    "type": "constructor",
+    "name": "constructor",
+    "inputs": [
+      { "name": "init_value", "type": "core::integer::u128" }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "get_current_count",
+    "inputs": [],
+    "outputs": [
+      { "type": "core::integer::u128" }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "increment",
+    "inputs": [],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "type": "function",
+    "name": "decrement",
+    "inputs": [],
+    "outputs": [],
+    "state_mutability": "external"
+  }
+]

@@ -1,0 +1,352 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Mystical Runes - FIXED with better visibility */
+.rune {
+  position: absolute;
+  font-size: 3rem; /* Larger size */
+  color: rgba(147, 51, 234, 0.5); /* More visible color */
+  user-select: none;
+  z-index: 1; /* Above particles but below content */
+  text-shadow: 0 0 10px rgba(147, 51, 234, 0.5); /* Glow effect */
+  font-weight: bold;
+}
+
+.rune-1 { top: 10%; left: 5%; animation: float 20s infinite linear; }
+.rune-2 { top: 20%; right: 10%; animation: float 25s infinite linear reverse; }
+.rune-3 { bottom: 30%; left: 15%; animation: float 30s infinite linear; }
+.rune-4 { top: 40%; right: 20%; animation: float 35s infinite linear reverse; }
+.rune-5 { bottom: 20%; right: 5%; animation: float 40s infinite linear; }
+.rune-6 { top: 60%; left: 8%; animation: float 45s infinite linear reverse; }
+.rune-7 { bottom: 10%; right: 25%; animation: float 50s infinite linear; }
+.rune-8 { top: 15%; left: 25%; animation: float 55s infinite linear reverse; }
+.rune-9 { bottom: 40%; right: 35%; animation: float 60s infinite linear; }
+.rune-10 { top: 70%; right: 15%; animation: float 65s infinite linear reverse; }
+
+@keyframes float {
+  0% { transform: rotate(0deg) translateX(0px) rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) translateX(20px) rotate(-180deg) scale(1.1); }
+  100% { transform: rotate(360deg) translateX(0px) rotate(-360deg) scale(1); }
+}
+
+/* 3D Perspective */
+.perspective-3d {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+
+/* Crystal Ball */
+.crystal-ball {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(120, 80, 200, 0.9) 0%,
+    rgba(80, 60, 180, 0.8) 20%,
+    rgba(40, 20, 100, 0.9) 60%,
+    rgba(20, 10, 60, 1) 100%
+  );
+  box-shadow:
+    inset 0 0 80px rgba(255, 255, 255, 0.1),
+    inset 0 0 100px rgba(120, 80, 200, 0.2),
+    inset -20px -20px 100px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(147, 51, 234, 0.6),
+    0 0 120px rgba(59, 130, 246, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d;
+  animation: float-3d 6s ease-in-out infinite;
+}
+
+.crystal-ball::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 30%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  z-index: 2;
+}
+
+.crystal-ball::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  filter: blur(5px);
+  z-index: 2;
+}
+
+/* Inner Core */
+.inner-core {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(180, 120, 255, 0.6) 0%,
+    rgba(120, 80, 255, 0.4) 50%,
+    transparent 100%
+  );
+  filter: blur(20px);
+  animation: pulse-core 4s ease-in-out infinite;
+}
+
+/* Swirling Magic */
+.swirl {
+  position: absolute;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(147, 51, 234, 0.3),
+    rgba(59, 130, 246, 0.3),
+    transparent
+  );
+  animation: swirl-rotate linear infinite;
+  filter: blur(5px);
+}
+
+.swirl-1 {
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  animation-duration: 20s;
+}
+
+.swirl-2 {
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  animation-duration: 15s;
+  animation-direction: reverse;
+}
+
+.swirl-3 {
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  animation-duration: 10s;
+}
+
+/* Inner Particles */
+.inner-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: float-inside 6s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Animations */
+@keyframes float-3d {
+  0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+  25% { transform: translateY(-10px) rotateX(5deg) rotateY(5deg); }
+  50% { transform: translateY(-5px) rotateX(0deg) rotateY(10deg); }
+  75% { transform: translateY(-10px) rotateX(-5deg) rotateY(5deg); }
+}
+
+@keyframes pulse-core {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+@keyframes swirl-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float-inside {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  25% { 
+    transform: translate(10px, -15px) scale(1.2);
+    opacity: 1;
+  }
+  50% { 
+    transform: translate(-5px, -25px) scale(0.8);
+    opacity: 0.5;
+  }
+  75% { 
+    transform: translate(-15px, -10px) scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes animate-oracle {
+  0% { 
+    transform: scale(1);
+    box-shadow: 0 0 60px rgba(147, 51, 234, 0.6);
+  }
+  25% { 
+    transform: scale(1.05);
+    box-shadow: 0 0 80px rgba(147, 51, 234, 0.8);
+  }
+  50% { 
+    transform: scale(0.95);
+    box-shadow: 0 0 100px rgba(59, 130, 246, 0.9);
+  }
+  75% { 
+    transform: scale(1.02);
+    box-shadow: 0 0 120px rgba(147, 51, 234, 0.7);
+  }
+  100% { 
+    transform: scale(1);
+    box-shadow: 0 0 60px rgba(147, 51, 234, 0.6);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% { 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(147, 51, 234, 0.5);
+  }
+  50% { 
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+                 0 0 30px rgba(147, 51, 234, 0.8),
+                 0 0 45px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Animation Classes */
+.animate-oracle {
+  animation: animate-oracle 2s ease-in-out;
+}
+
+.animate-text-glow {
+  animation: text-glow 3s ease-in-out infinite;
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #e9d5ff 25%,
+    #93c5fd 50%,
+    #e9d5ff 75%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Stars and Particles - FIXED to not interfere with input */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle infinite;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+  z-index: 0; /* Ensure stars stay in background */
+  pointer-events: none; /* Prevent interaction */
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.magic-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: linear-gradient(to bottom, rgba(147, 51, 234, 0.6), rgba(59, 130, 246, 0.6));
+  border-radius: 50%;
+  opacity: 0;
+  animation: magic-float linear infinite;
+  box-shadow: 0 0 8px rgba(147, 51, 234, 0.4);
+  z-index: 0; /* Ensure particles stay in background */
+  pointer-events: none; /* Prevent interaction */
+}
+
+@keyframes magic-float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-50vh) translateX(calc(50vw * (var(--direction, 1) * 0.1)));
+    opacity: 0;
+  }
+}
+
+/* Fix for gold colors since 'gold-' isn't a default Tailwind color */
+.bg-gold-800 { background-color: #b7791f; }
+.bg-gold-600 { background-color: #d69e2e; }
+.bg-gold-900 { background-color: #744210; }
+.bg-gold-700 { background-color: #a16207; }
