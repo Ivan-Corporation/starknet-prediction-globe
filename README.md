@@ -189,11 +189,15 @@ sncast account deploy --network sepolia --name mysepolia --silent
 ```sh
 sncast --account mysepolia declare --contract-name SimpleCounter
 ```
+or
+```sh
+sncast --account mysepolia declare --contract-name SimpleCounter --network sepolia
+```
 
 ### Deploy:
 
 ```sh
-sncast --account mysepolia deploy --contract-name SimpleCounter --constructor-calldata 0
+sncast --account mysepolia deploy --contract-name SimpleCounter --constructor-calldata 0 --network sepolia
 ```
 
 Save the resulting:

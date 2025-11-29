@@ -1,5 +1,5 @@
 [sncast.default]
-url = "https://starknet-sepolia.g.alchemy.com/starknet/version/rpc/v0_10/pSdnR2sT6vam6LCSXurnEoTzoWvyCdwU"
+url = "https://starknet-sepolia.g.alchemy.com/starknet/version/rpc/v0_10/"
 accounts-file = "account.json"
 account = "default"
 wait-timeout = 300
